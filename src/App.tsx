@@ -66,7 +66,7 @@ function App() {
       tech: ['React', 'Node.js', 'Socket.io']
     },
     {
-      title: 'Cloud Storage Solution',
+      title: 'Doctor Appointment Website',
       description: 'Secure file storage and sharing platform with end-to-end encryption.',
       image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=600',
       tech: ['AWS S3', 'Python', 'React']
