@@ -16,13 +16,13 @@
 ✔️ Responsive design
 ✔️ Projects showcase
 ✔️ Contact form
-
+```sh
 🚀 Installation & Running Locally
 > git clone https://github.com/shubham-nevare/portfolio.git
 > cd portfolio
 > npm install
 > npm dev run
-
+```
 
 📬 Contact Me
 📧 Email: shubhamnevare25@gmail.com
