@@ -18,10 +18,14 @@
 ✔️ Contact form
 ```sh
 🚀 Installation & Running Locally
-> git clone https://github.com/shubham-nevare/portfolio.git
-> cd portfolio
-> npm install
-> npm dev run
+# Clone the repository
+git clone https://github.com/shubham-nevare/portfolio.git
+# Navigate to the project folder
+cd portfolio
+# Install dependencies
+npm install
+# Start the development server
+npm dev run
 ```
 
 📬 Contact Me
