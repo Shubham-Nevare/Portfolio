@@ -60,15 +60,16 @@ function App() {
 
   const projects = [
     {
-      title: 'E-Learning Platform',
-      description: 'A comprehensive learning management system with real-time collaboration features.',
-      image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&q=80&w=600',
-      tech: ['React', 'Node.js', 'Socket.io']
+      title: 'Smart AI Bot',
+      description: 'SmartAIBot is an advanced AI-powered chatbot to provide intelligent and human-like responses. The bot can be integrated into websites or applications to assist users with queries, automate customer support, and enhance user engagement.',
+      image: 'https://plus.unsplash.com/premium_photo-1726079247110-5e593660c7b2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHNtYXJ0JTIwYWklMjBib3R8ZW58MHx8MHx8fDA%3D',
+      link: "https://smart-ai-bot.vercel.app/",
+      tech: ['React', 'JavaScript', 'Tailwind CSS']
     },
     {
       title: 'Doctor Appointment Website',
       description: 'A Web application created using HTML and JavaScript and backend use PHP which holds details of doctor and patients, complete report of particular patient and other details of available laboratory, etc.',
-      image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=600',
+      image: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZG9jdG9yJTIwYXBwb2ludG1lbnR8ZW58MHx8MHx8fDA%3D',
       tech: ['PHP', 'HTML', 'CSS']
     },
     {
