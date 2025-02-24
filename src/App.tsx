@@ -67,15 +67,16 @@ function App() {
     },
     {
       title: 'Doctor Appointment Website',
-      description: 'Secure file storage and sharing platform with end-to-end encryption.',
+      description: 'A Web application created using HTML and JavaScript and backend use PHP which holds details of doctor and patients, complete report of particular patient and other details of available laboratory, etc.',
       image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=600',
-      tech: ['AWS S3', 'Python', 'React']
+      tech: ['PHP', 'HTML', 'CSS']
     },
     {
-      title: 'AI Task Manager',
-      description: 'Smart task management system with AI-powered prioritization.',
-      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=600',
-      tech: ['TensorFlow', 'FastAPI', 'React']
+      title: 'Food delivery website',
+      description: 'A modern, responsive, and user-friendly food delivery web application built using React.js and Tailwind CSS. This project allows users to browse restaurants, search for food, add items to the cart, and place orders seamlessly. ',
+      image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=600',
+      link: 'https://food-delivery-website-shubhams.vercel.app/',
+      tech: ['React', 'JavaScript', 'Tailwind CSS']
     }
   ];
 
@@ -234,7 +235,8 @@ function App() {
                     ))}
                   </div>
                   <div className="flex items-center gap-2">
-                    <a href="#" className="text-blue-400 hover:text-blue-300 flex items-center gap-1">
+                    <a href={project.link} target='_blank'
+                    className="text-blue-400 hover:text-blue-300 flex items-center gap-1">
                       <ExternalLink size={16} />
                       Live Demo
                     </a>
