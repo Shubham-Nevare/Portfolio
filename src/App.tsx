@@ -117,7 +117,7 @@ function App() {
       title: "Cloud Foundations",
       issuer: "AWS Academy",
       date: "November 2024",
-      image: "https://files.oaiusercontent.com/file-KJQFyyo4E3s8CcGxV2N1Uw?se=2025-02-27T09%3A07%3A10Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D6673e996-70d8-40e4-aeca-2758b7a94b96.webp&sig=uu%2Bg95qQUJnp2pKl2ghATjvBkabgRsU%2B5WYynvu3MCw%3D",
+      image: "https://files.oaiusercontent.com/file-S6Yb1kwPQz8cZ9ewAUpsaU?se=2025-02-27T09%3A15%3A42Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D9ea289d3-e3d5-46f3-bd05-c03197c89f8d.webp&sig=sJp/FaWugs9FKSZM3poHt8lwMPn14mFShOsdHDkRlFY%3D",
       link: "https://drive.google.com/file/d/1hh-Pzpb-kC8ZSQ_Pf-X3XPhtANgFwL5C/view?usp=sharing",
       badge: "https://www.credly.com/go/q1vOGdTE",
     },
