@@ -129,11 +129,11 @@ function App() {
       link: "https://drive.google.com/file/d/1tZ11BUfB9KEqvOXk6dcEBe6dqqyA_Zut/view?usp=sharing",
     },
     {
-      title: "UI/UX Design Professional",
-      issuer: "Google",
-      date: "September 2023",
+      title: "SQL",
+      issuer: " Newton School",
+      date: "March 2025",
       image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2671&q=80",
-      link: "",
+      link: "https://drive.google.com/file/d/1qwgS2ZQb6cFELoBDiqFfQdkEMGiwIB8_/view?usp=sharing",
     },
   ];
 
@@ -218,7 +218,7 @@ function App() {
             {/* Resume Buttons */}
             <div className="flex justify-center gap-4 mb-12">
               <a
-                href="https://drive.google.com/file/d/1CgCwajofBd1DN0xa4GYbz6eh9tCxG8j-/view?usp=sharing"
+                href="https://drive.google.com/file/d/1_zCF6ys0XnuOkwKu8cUYJe5LjHL1i8ve/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-white font-medium px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 transform hover:-translate-y-1"
@@ -227,7 +227,7 @@ function App() {
                 View Resume
               </a>
               <a
-                href="https://drive.google.com/uc?export=download&id=1CgCwajofBd1DN0xa4GYbz6eh9tCxG8j-"
+                href="https://drive.google.com/file/d/1_zCF6ys0XnuOkwKu8cUYJe5LjHL1i8ve/view?usp=sharing"
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-medium px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 transform hover:-translate-y-1"
               >
                 <Download size={20} />
