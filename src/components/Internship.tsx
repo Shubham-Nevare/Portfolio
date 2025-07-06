@@ -5,8 +5,8 @@ function Internship() {
       position: "Frontend Developer Intern",
       duration: "April 2023 - Present",
       description:
-        "Developed responsive web applications using React and Next.js. Implemented modern UI/UX designs and improved website performance.",
-      skills: ["React", "Next.js", "Tailwind CSS"],
+        "Collaborated with cross-functional teams to design and develop highly responsive, accessible web applications using React and Next.js. Led the implementation of modern UI/UX designs, resulting in improved user engagement and satisfaction. Optimized website performance through advanced code-splitting, lazy loading, and GSAP-powered animations. Integrated RESTful APIs for dynamic content and ensured seamless deployment workflows. Contributed to the migration of legacy components to scalable, maintainable codebases, and actively participated in code reviews and agile ceremonies.",
+      skills: ["React", "Next.js", "Tailwind CSS", "Webflow", "GSAP", "API"],
     },
   ];
   return (
@@ -15,7 +15,7 @@ function Internship() {
         <h2 className="text-3xl font-bold mb-12 text-center">
           Internship Experience
         </h2>
-        <div className="max-w-4xl mx-auto flex justify-center">
+        <div className="max-w-5xl mx-auto flex justify-center">
           {internships.map((internship, index) => (
             <div
               key={index}

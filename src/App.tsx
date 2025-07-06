@@ -71,7 +71,7 @@ function App() {
     <>
       <div
         ref={cursorRef}
-        className="h-[30px] w-[30px] bg-blue-500 rounded-full fixed z-[9999] pointer-events-none text-center text-[15px] flex items-center justify-center  font-semibold text-white whitespace-nowrap"
+        className="hidden md:block h-[30px] w-[30px] bg-blue-500 rounded-full fixed z-[9999] pointer-events-none text-center text-[15px] flex items-center justify-center  font-semibold text-white whitespace-nowrap"
       ></div>
       <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
         {/* Navigation */}

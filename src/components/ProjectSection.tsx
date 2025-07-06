@@ -28,6 +28,26 @@ function ProjectSection() {
       link: "https://food-delivery-website-shubhams.vercel.app/",
       tech: ["React", "JavaScript", "Tailwind CSS"],
     },
+    {
+      title: "Digital Health",
+      description:
+        "A secure, user-friendly digital health platform built with the MERN stack. It enables patient data management, online appointments, and real-time updates, deployed on Vercel and connected to MongoDB Atlas.",
+      image:
+        "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80",
+      link: "https://digital-health-nine.vercel.app/",
+      tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+      github: "https://github.com/Shubham-Nevare/Digital-Health",
+    },
+    {
+      title: "TechFoundry",
+      description:
+        "A modern tech services hub for Web, Mobile, AI, Cloud, and UI/UX solutions. Developed using Next.js and Tailwind CSS, with best practices for high-performance deployment on Vercel.",
+      image:
+        "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80",
+      link: "https://tech-foundry.vercel.app/",
+      tech: ["Next.js", "React", "JavaScript", "Tailwind CSS"],
+      github: "https://github.com/Shubham-Nevare/TechFoundry-",
+    },
   ];
   return (
     <section id="projects" className="py-20 bg-gray-800">

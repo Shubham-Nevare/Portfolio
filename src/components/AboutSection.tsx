@@ -1,14 +1,20 @@
 import gsap from "gsap";
 import {
-  Braces,
-  Code,
+  Box,
+  Boxes,
+ 
   Code2,
-  Codesandbox,
-  CodeSquare,
-  Feather,
-  FileCode,
-  Layers,
-  Palette,
+ 
+  Coffee,
+  Cpu,
+ 
+  FileInput,
+  Paintbrush,
+  PaintBucket,
+  PenTool,
+  Wind,
+  Database,
+  Globe,
 } from "lucide-react";
 import { RefObject } from "react";
 
@@ -17,16 +23,20 @@ interface AboutSectionProps {
 }
 function AboutSection({ cursorRef }: AboutSectionProps) {
   const skills = [
-    { name: "React", icon: Code, color: "text-blue-400", items: [] },
-    { name: "Next JS", icon: Codesandbox, color: "text-blue-400", items: [] },
-    { name: "GSAP", icon: Palette, color: "text-purple-500", items: [] },
-    { name: "JavaScript", icon: Code2, color: "text-yellow-400", items: [] },
-    { name: "Java", icon: Braces, color: "text-red-500", items: [] },
-    { name: "Tailwind", icon: Feather, color: "text-teal-400", items: [] },
-    { name: "Figma", icon: Palette, color: "text-purple-500", items: [] },
-    { name: "Bootstrap", icon: Layers, color: "text-indigo-500", items: [] },
-    { name: "HTML", icon: FileCode, color: "text-orange-500", items: [] },
-    { name: "CSS", icon: CodeSquare, color: "text-blue-600", items: [] },
+    { name: "React", icon: Cpu, color: "text-blue-400", items: [] },
+    { name: "Next JS", icon: Box, color: "text-blue-400", items: [] },
+    { name: "GSAP", icon: Paintbrush, color: "text-purple-500", items: [] }, 
+    { name: "JavaScript", icon: Code2, color: "text-yellow-400", items: [] }, 
+    { name: "Java", icon: Coffee, color: "text-red-500", items: [] }, 
+    { name: "Tailwind", icon: Wind, color: "text-teal-400", items: [] }, 
+    { name: "Figma", icon: PenTool, color: "text-purple-500", items: [] }, 
+    { name: "Bootstrap", icon: Boxes, color: "text-indigo-500", items: [] }, 
+    { name: "HTML", icon: FileInput, color: "text-orange-500", items: [] },
+    { name: "CSS", icon: PaintBucket, color: "text-blue-600", items: [] },
+    { name: "MySQL", icon: Database, color: "text-blue-600", items: [] },
+    { name: "Webflow", icon: Globe, color: "text-blue-600", items: [] },
+
+
   ];
   return (
     <section
