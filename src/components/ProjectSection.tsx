@@ -62,7 +62,7 @@ function ProjectSection() {
         "A secure, user-friendly digital health platform built with the MERN stack. It enables patient data management, online appointments, and real-time updates, deployed on Vercel and connected to MongoDB Atlas.",
       image:
         "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80",
-      link: "https://digital-health-nine.vercel.app/",
+      link: "https://digital-health-dh.vercel.app/",
       tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
       github: "https://github.com/Shubham-Nevare/Digital-Health",
     },
