@@ -1,3 +1,7 @@
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 import { RefObject } from "react";
 
 interface EducationSectionProps {
@@ -8,8 +12,8 @@ const educationData = [
   {
     title: "Master of Computer Applications",
     institution: "MET ICS College, Bandra - Mumbai University",
-    duration: "2023 - Present",
-    tag: "Current CGPA: 7.85/10",
+    duration: "2023 - 2025",
+    tag: "CGPA: 8.05/10",
     tagColor: "bg-blue-500/20 text-blue-400",
     label: "MCA",
     description:
@@ -38,14 +42,15 @@ function EducationSection({ cursorRef }: EducationSectionProps) {
               <div
                 key={label}
                 className="bg-gray-900 rounded-lg p-8 hover:transform hover:scale-[1.02] transition-all duration-300"
-                onMouseEnter={() => {
+               
+                  onMouseEnter={() => {
                   if (cursorRef.current) {
-                    cursorRef.current.innerHTML = label;
+                    cursorRef.current.innerHTML = label || "No title";
                     gsap.to(cursorRef.current, {
                       width: "auto",
                       height: "auto",
                       padding: "8px 12px",
-                      fontSize: "10px",
+                      fontSize: "12px",
                       duration: 0,
                       delay: 0,
                       ease: "power2.out",
@@ -56,8 +61,8 @@ function EducationSection({ cursorRef }: EducationSectionProps) {
                   if (cursorRef.current) {
                     cursorRef.current.innerHTML = "";
                     gsap.to(cursorRef.current, {
-                      width: 40,
-                      height: 40,
+                      width: 30,
+                      height: 30,
                       padding: 0,
                       fontSize: "10px",
                       duration: 0.3,
@@ -71,7 +76,7 @@ function EducationSection({ cursorRef }: EducationSectionProps) {
                     <h3 className="text-xl font-semibold mb-2">{title}</h3>
                     <p className="text-gray-400">{institution} • {duration}</p>
                   </div>
-                  <div className="text-right">
+                  <div className="text-center">
                     <span className={`inline-block px-3 py-1 ${tagColor} rounded-full text-sm`}>
                       {tag}
                     </span>

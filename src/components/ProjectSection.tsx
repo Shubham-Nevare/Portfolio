@@ -1,9 +1,23 @@
 import { ExternalLink, Github } from "lucide-react";
 
+// Helper to convert 'Month YYYY' to a Date object for sorting
+function parseMonthYear(duration: string): Date {
+  if (!duration) return new Date(0);
+  const [monthStr, yearStr] = duration.split(" ");
+  const months = [
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+  ];
+  const month = months.findIndex(m => monthStr.startsWith(m));
+  const year = parseInt(yearStr, 10);
+  if (month === -1 || isNaN(year)) return new Date(0);
+  return new Date(year, month);
+}
+
 function ProjectSection() {
   const projects = [
     {
       title: "Smart AI Bot",
+      duration: "Aug 2024",
       description:
         "SmartAIBot is an advanced AI-powered chatbot to provide intelligent and human-like responses. The bot can be integrated into websites or applications to assist users with queries, automate customer support, and enhance user engagement.",
       image:
@@ -13,6 +27,7 @@ function ProjectSection() {
     },
     {
       title: "Doctor Appointment Website",
+      duration: "Dec 2024",
       description:
         "A Web application created using HTML and JavaScript and backend use PHP which holds details of doctor and patients, complete report of particular patient and other details of available laboratory, etc.",
       image:
@@ -21,6 +36,7 @@ function ProjectSection() {
     },
     {
       title: "Food delivery website",
+      duration: "April 2025",
       description:
         "A modern, responsive, and user-friendly food delivery web application built using React.js and Tailwind CSS. This project allows users to browse restaurants, search for food, add items to the cart, and place orders seamlessly. ",
       image:
@@ -30,6 +46,7 @@ function ProjectSection() {
     },
     {
       title: "Digital Health",
+      duration: "June 2025",
       description:
         "A secure, user-friendly digital health platform built with the MERN stack. It enables patient data management, online appointments, and real-time updates, deployed on Vercel and connected to MongoDB Atlas.",
       image:
@@ -40,6 +57,7 @@ function ProjectSection() {
     },
     {
       title: "TechFoundry",
+      duration: "July 2025",
       description:
         "A modern tech services hub for Web, Mobile, AI, Cloud, and UI/UX solutions. Developed using Next.js and Tailwind CSS, with best practices for high-performance deployment on Vercel.",
       image:
@@ -48,7 +66,7 @@ function ProjectSection() {
       tech: ["Next.js", "React", "JavaScript", "Tailwind CSS"],
       github: "https://github.com/Shubham-Nevare/TechFoundry-",
     },
-  ];
+  ].sort((a, b) => parseMonthYear(b.duration).getTime() - parseMonthYear(a.duration).getTime());
   return (
     <section id="projects" className="py-20 bg-gray-800">
       <div className="container mx-auto px-4">
@@ -70,7 +88,12 @@ function ProjectSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-60"></div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                <div className="flex justify-between items-center mb-2 gap-2 flex-wrap">
+                  <h3 className="text-xl font-semibold">{project.title}</h3>
+                  {project.duration && (
+                    <p className="text-gray-400 text-xs">{project.duration}</p>
+                  )}
+                </div>
                 <p className="text-gray-400 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech, i) => (

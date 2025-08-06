@@ -21,13 +21,19 @@ function Internship() {
               key={index}
               className="bg-gray-800 rounded-lg p-6 hover:transform hover:scale-[1.02] transition-all duration-300 w-full md:w-[70%]"
             >
-              <h3 className="text-xl font-semibold mb-2">
-                {internship.company}
-              </h3>
-              <p className="text-blue-400 mb-2">{internship.position}</p>
-              <p className="text-gray-400 text-sm mb-4">
-                {internship.duration}
-              </p>
+              <div className="flex flex-wrap items-center justify-between mb-4 mr-4">
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">
+                    {internship.company}
+                  </h3>
+                  <p className="text-blue-400 mb-2">{internship.position}</p>{" "}
+                </div>
+
+                <p className="text-gray-400 text-sm mb-4">
+                  {internship.duration}
+                </p>
+              </div>
+
               <p className="text-gray-300 mb-4">{internship.description}</p>
               <div className="flex flex-wrap gap-2">
                 {internship.skills.map((skill, i) => (

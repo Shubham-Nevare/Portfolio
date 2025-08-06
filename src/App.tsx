@@ -40,25 +40,29 @@ function App() {
   const cursorRef = useRef(null);
   // GSAP for Animation
   useEffect(() => {
-    gsap.from(sectionRef.current, {
-      y: 100,
-      opacity: 0,
-      duration: 1.2,
-      ease: "power4.out",
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 80%",
-        toggleActions: "play none none none",
-      },
-    });
+    if (sectionRef.current) {
+      gsap.from(sectionRef.current, {
+        y: 100,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      });
+    }
     // Cursor tracking animation
     const handleMouseMove = (event: MouseEvent) => {
-      gsap.to(cursorRef.current, {
-        x: event.clientX,
-        y: event.clientY,
-        duration: 0.6,
-        ease: "power2.out",
-      });
+      if (cursorRef.current) {
+        gsap.to(cursorRef.current, {
+          x: event.clientX,
+          y: event.clientY,
+          duration: 0.6,
+          ease: "power2.out",
+        });
+      }
     };
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -71,8 +75,9 @@ function App() {
     <>
       <div
         ref={cursorRef}
-        className="hidden md:block h-[30px] w-[30px] bg-blue-500 rounded-full fixed z-[9999] pointer-events-none text-center text-[15px] flex items-center justify-center  font-semibold text-white whitespace-nowrap"
+        className="hidden md:block h-[30px] w-[30px]  bg-blue-500 rounded-full fixed z-[9999] pointer-events-none text-center text-[15px] flex items-center justify-center  font-semibold text-white whitespace-nowrap"
       ></div>
+      
       <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
         {/* Navigation */}
         <Navbar />
