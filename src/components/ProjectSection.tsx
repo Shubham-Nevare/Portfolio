@@ -5,9 +5,20 @@ function parseMonthYear(duration: string): Date {
   if (!duration) return new Date(0);
   const [monthStr, yearStr] = duration.split(" ");
   const months = [
-    "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
   ];
-  const month = months.findIndex(m => monthStr.startsWith(m));
+  const month = months.findIndex((m) => monthStr.startsWith(m));
   const year = parseInt(yearStr, 10);
   if (month === -1 || isNaN(year)) return new Date(0);
   return new Date(year, month);
@@ -66,7 +77,29 @@ function ProjectSection() {
       tech: ["Next.js", "React", "JavaScript", "Tailwind CSS"],
       github: "https://github.com/Shubham-Nevare/TechFoundry-",
     },
-  ].sort((a, b) => parseMonthYear(b.duration).getTime() - parseMonthYear(a.duration).getTime());
+    {
+      title: "CareerConnect",
+      duration: "August 2025",
+      description:
+        "A job portal platform enabling job seekers and employers to connect efficiently. Built using the MERN stack, deployed on Vercel and Render with integrated Cloudinary for image uploads.",
+      image:
+        "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
+      link: "https://career-connect-jobs.vercel.app",
+      tech: [
+        "MongoDB",
+        "Express.js",
+        "React",
+        "Node.js",
+        "Tailwind CSS",
+        "Cloudinary",
+      ],
+      github: "https://github.com/Shubham-Nevare/CareerConnect.git",
+    },
+  ].sort(
+    (a, b) =>
+      parseMonthYear(b.duration).getTime() -
+      parseMonthYear(a.duration).getTime()
+  );
   return (
     <section id="projects" className="py-20 bg-gray-800">
       <div className="container mx-auto px-4">

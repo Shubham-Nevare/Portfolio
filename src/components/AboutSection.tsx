@@ -76,8 +76,8 @@ function AboutSection({ cursorRef }: AboutSectionProps) {
                   if (cursorRef.current) {
                     cursorRef.current.innerHTML = "";
                     gsap.to(cursorRef.current, {
-                      width: 40,
-                      height: 40,
+                      width: 30,
+                      height: 30,
                       padding: 0,
                       fontSize: "10px",
                       duration: 0.3,
