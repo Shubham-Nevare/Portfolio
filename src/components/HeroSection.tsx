@@ -48,7 +48,8 @@ function HeroSection() {
           {/* Resume Buttons */}
           <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-12">
             <a
-              href="https://drive.google.com/file/d/1_zCF6ys0XnuOkwKu8cUYJe5LjHL1i8ve/view?usp=sharing"
+              href=" https://drive.google.com/file/d/1rTMAFNfPogKT4msJZe6EvIIEuhE-vUu_/view?usp=sharing"
+             
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-white font-medium px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 transform hover:-translate-y-1 w-[220px] md:w-auto"
@@ -57,7 +58,7 @@ function HeroSection() {
               View Resume
             </a>
             <a
-              href="https://drive.google.com/uc?export=download&id=1_zCF6ys0XnuOkwKu8cUYJe5LjHL1i8ve"
+              href="https://drive.google.com/uc?export=download&id=1rTMAFNfPogKT4msJZe6EvIIEuhE-vUu_"
               download
               className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-medium px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 transform hover:-translate-y-1 w-[220px] md:w-auto"
             >
