@@ -39,7 +39,7 @@ function CursorGSAP() {
   return (
     <div
       ref={cursorRef}
-      className="h-[40px] w-[40px] bg-blue-500 rounded-full fixed z-[9999] pointer-events-none text-center text-[15px] flex items-center justify-center  font-bold text-black whitespace-nowrap"
+      className="h-[40px] w-[40px]  bg-blue-500 rounded-full fixed z-[9999] pointer-events-none text-center text-[15px] flex items-center justify-center  font-bold text-black whitespace-nowrap"
     ></div>
   );
 }

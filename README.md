@@ -16,17 +16,7 @@
 ✔️ Responsive design
 ✔️ Projects showcase
 ✔️ Contact form
-```sh
-🚀 Installation & Running Locally
-# Clone the repository
-git clone https://github.com/shubham-nevare/portfolio.git
-# Navigate to the project folder
-cd portfolio
-# Install dependencies
-npm install
-# Start the development server
-npm dev run
-```
+
 
 📬 Contact Me
 📧 Email: shubhamnevare25@gmail.com

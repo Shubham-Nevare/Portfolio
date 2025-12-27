@@ -49,7 +49,7 @@ function Navbar() {
             ].map((section) => (
               <a
                 key={section}
-                href={`#${section}`}
+                href={`/#${section}`}
                 className={`capitalize ${
                   activeSection === section
                     ? "text-blue-400"

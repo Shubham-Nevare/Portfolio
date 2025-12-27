@@ -3,7 +3,9 @@ function Internship() {
     {
       company: "Schbang Digital Solutions",
       position: "Frontend Developer Intern",
-      duration: "April 2023 - Present",
+      duration: "April 2025 - Oct 2025",
+      companyLogo:
+        "schbang_logo.jpg",
       description:
         "Collaborated with cross-functional teams to design and develop highly responsive, accessible web applications using React and Next.js. Led the implementation of modern UI/UX designs, resulting in improved user engagement and satisfaction. Optimized website performance through advanced code-splitting, lazy loading, and GSAP-powered animations. Integrated RESTful APIs for dynamic content and ensured seamless deployment workflows. Contributed to the migration of legacy components to scalable, maintainable codebases, and actively participated in code reviews and agile ceremonies.",
       skills: ["React", "Next.js", "Tailwind CSS", "Webflow", "GSAP", "API"],
@@ -21,15 +23,23 @@ function Internship() {
               key={index}
               className="bg-gray-800 rounded-lg p-6 hover:transform hover:scale-[1.02] transition-all duration-300 w-full md:w-[70%]"
             >
-              <div className="flex flex-wrap items-center justify-between mb-4 mr-4">
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">
-                    {internship.company}
-                  </h3>
-                  <p className="text-blue-400 mb-2">{internship.position}</p>{" "}
+              <div className="flex items-center justify-between mb-4 gap-4">
+                <div className="flex items-center gap-4 flex-1">
+                  {internship.companyLogo && (
+                    <img
+                      src={internship.companyLogo}
+                      alt={`${internship.company} Logo`}
+                      className="h-12 w-12 object-contain" 
+                    />
+                  )}
+                  <div>
+                    <h3 className="text-xl font-semibold mb-1">
+                      {internship.company}
+                    </h3>
+                    <p className="text-blue-400 text-sm">{internship.position}</p>
+                  </div>
                 </div>
-
-                <p className="text-gray-400 text-sm mb-4">
+                <p className="text-gray-400 text-sm whitespace-nowrap">
                   {internship.duration}
                 </p>
               </div>

@@ -1,167 +1,175 @@
 import { ExternalLink, Github } from "lucide-react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { projects } from "../data/projects"; // Adjust path as needed
 
-// Helper to convert 'Month YYYY' to a Date object for sorting
-function parseMonthYear(duration: string): Date {
-  if (!duration) return new Date(0);
-  const [monthStr, yearStr] = duration.split(" ");
-  const months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-  const month = months.findIndex((m) => monthStr.startsWith(m));
-  const year = parseInt(yearStr, 10);
-  if (month === -1 || isNaN(year)) return new Date(0);
-  return new Date(year, month);
-}
+// Animation variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { 
+    opacity: 0, 
+    y: 50 
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      // use numeric cubic-bezier array to satisfy framer-motion Easing type
+      ease: [0.25, 0.1, 0.25, 1]
+    }
+  }
+};
 
 function ProjectSection() {
-  const projects = [
-    {
-      title: "Smart AI Bot",
-      duration: "Aug 2024",
-      description:
-        "SmartAIBot is an advanced AI-powered chatbot to provide intelligent and human-like responses. The bot can be integrated into websites or applications to assist users with queries, automate customer support, and enhance user engagement.",
-      image:
-        "https://plus.unsplash.com/premium_photo-1726079247110-5e593660c7b2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHNtYXJ0JTIwYWklMjBib3R8ZW58MHx8MHx8fDA%3D",
-      link: "https://smart-ai-bot.vercel.app/",
-      tech: ["React", "JavaScript", "Tailwind CSS"],
-    },
-    {
-      title: "Doctor Appointment Website",
-      duration: "Dec 2024",
-      description:
-        "A Web application created using HTML and JavaScript and backend use PHP which holds details of doctor and patients, complete report of particular patient and other details of available laboratory, etc.",
-      image:
-        "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZG9jdG9yJTIwYXBwb2ludG1lbnR8ZW58MHx8MHx8fDA%3D",
-      tech: ["PHP", "HTML", "CSS"],
-    },
-    {
-      title: "Food delivery website",
-      duration: "April 2025",
-      description:
-        "A modern, responsive, and user-friendly food delivery web application built using React.js and Tailwind CSS. This project allows users to browse restaurants, search for food, add items to the cart, and place orders seamlessly. ",
-      image:
-        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=600",
-      link: "https://food-delivery-website-shubhams.vercel.app/",
-      tech: ["React", "JavaScript", "Tailwind CSS"],
-    },
-    {
-      title: "Digital Health",
-      duration: "June 2025",
-      description:
-        "A secure, user-friendly digital health platform built with the MERN stack. It enables patient data management, online appointments, and real-time updates, deployed on Vercel and connected to MongoDB Atlas.",
-      image:
-        "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80",
-      link: "https://digital-health-dh.vercel.app/",
-      tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
-      github: "https://github.com/Shubham-Nevare/Digital-Health",
-    },
-    {
-      title: "TechFoundry",
-      duration: "July 2025",
-      description:
-        "A modern tech services hub for Web, Mobile, AI, Cloud, and UI/UX solutions. Developed using Next.js and Tailwind CSS, with best practices for high-performance deployment on Vercel.",
-      image:
-        "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80",
-      link: "https://tech-foundry.vercel.app/",
-      tech: ["Next.js", "React", "JavaScript", "Tailwind CSS"],
-      github: "https://github.com/Shubham-Nevare/TechFoundry-",
-    },
-    {
-      title: "CareerConnect",
-      duration: "August 2025",
-      description:
-        "A job portal platform enabling job seekers and employers to connect efficiently. Built using the MERN stack, deployed on Vercel and Render with integrated Cloudinary for image uploads.",
-      image:
-        "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
-      link: "https://career-connect-jobs.vercel.app",
-      tech: [
-        "MongoDB",
-        "Express.js",
-        "React",
-        "Node.js",
-        "Tailwind CSS",
-        "Cloudinary",
-      ],
-      github: "https://github.com/Shubham-Nevare/CareerConnect.git",
-    },
-  ].sort(
-    (a, b) =>
-      parseMonthYear(b.duration).getTime() -
-      parseMonthYear(a.duration).getTime()
-  );
+  const previewProjects = projects.slice(0, 3);
+
   return (
-    <section id="projects" className="py-20 bg-gray-800">
+    <section id="projects" className="py-20 bg-gradient-to-br from-gray-900 to-gray-800">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-12 text-center">
-          Featured Projects
-        </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <div
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+            Featured Projects
+          </h2>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            Here are some of my recent projects that showcase my skills in modern web development
+          </p>
+        </motion.div>
+
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          {previewProjects.map((project, index) => (
+            <motion.div
               key={index}
-              className="bg-gray-900 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl"
+              variants={itemVariants as any}
+              whileHover={{ 
+                y: -10,
+                scale: 1.02,
+                transition: { duration: 0.3 }
+              }}
+              className="group bg-gray-800/50 rounded-2xl overflow-hidden border border-gray-700 hover:border-blue-500/30 backdrop-blur-sm"
             >
-              <div className="relative">
-                <img
-                  src={project.image}
+              <div className="relative overflow-hidden">
+                <motion.img 
+                  src={project.image} 
                   alt={project.title}
                   className="w-full h-48 object-cover"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.4 }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-60"></div>
-              </div>
-              <div className="p-6">
-                <div className="flex justify-between items-center mb-2 gap-2 flex-wrap">
-                  <h3 className="text-xl font-semibold">{project.title}</h3>
-                  {project.duration && (
-                    <p className="text-gray-400 text-xs">{project.duration}</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/20 to-transparent opacity-80"></div>
+                <div className="absolute top-4 right-4 flex gap-2">
+                  {project.link && (
+                    <motion.a
+                      href={project.link}
+                      target="_blank"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                      className="p-2 bg-gray-900/80 rounded-full backdrop-blur-sm hover:bg-gray-800 transition-colors"
+                    >
+                      <ExternalLink size={16} className="text-white" />
+                    </motion.a>
+                  )}
+                  {project.github && (
+                    <motion.a
+                      href={project.github}
+                      target="_blank"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                      className="p-2 bg-gray-900/80 rounded-full backdrop-blur-sm hover:bg-gray-800 transition-colors"
+                    >
+                      <Github size={16} className="text-white" />
+                    </motion.a>
                   )}
                 </div>
-                <p className="text-gray-400 mb-4">{project.description}</p>
+              </div>
+              
+              <div className="p-6">
+                <div className="flex justify-between items-start mb-3">
+                  <h3 className="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors">
+                    {project.title}
+                  </h3>
+                  <span className="text-xs text-gray-400 bg-gray-700 px-2 py-1 rounded-full">
+                    {project.duration}
+                  </span>
+                </div>
+                
+                <p className="text-gray-300 mb-4 line-clamp-3">
+                  {project.description}
+                </p>
+                
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech, i) => (
-                    <span
+                    <span 
                       key={i}
-                      className="px-2 py-1 bg-gray-800 rounded-full text-sm text-gray-300"
+                      className="px-3 py-1 bg-blue-500/10 text-blue-300 rounded-full text-xs border border-blue-500/20"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-                <div className="flex items-center gap-2">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    className="text-blue-400 hover:text-blue-300 flex items-center gap-1"
-                  >
-                    <ExternalLink size={16} />
-                    Live Demo
-                  </a>
-                  <span className="text-gray-600">•</span>
-                  <a
-                    href="https://github.com/Shubham-Nevare"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-400 hover:text-blue-300 flex items-center gap-1"
-                  >
-                    <Github size={16} />
-                    Code
-                  </a>
+                
+                <div className="flex items-center justify-between pt-4 border-t border-gray-700">
+                  {project.link ? (
+                    <motion.a
+                      href={project.link}
+                      target="_blank"
+                      className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors group/link"
+                      whileHover={{ x: 5 }}
+                    >
+                      <ExternalLink size={18} />
+                      <span>Live Demo</span>
+                    </motion.a>
+                  ) : (
+                    <span className="text-gray-500 text-sm">Demo coming soon</span>
+                  )}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mt-12"
+        >
+          <Link 
+            to="/projects" 
+            className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-xl hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 group"
+          >
+            <span>View All Projects</span>
+            <motion.span
+              animate={{ x: [0, 5, 0] }}
+              transition={{ repeat: Infinity, duration: 1.5 }}
+              className="group-hover:translate-x-1 transition-transform"
+            >
+              →
+            </motion.span>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

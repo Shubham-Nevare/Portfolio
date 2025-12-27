@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import AllProjects from "./components/AllProjects";
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
 import ProjectSection from "./components/ProjectSection";
@@ -75,12 +77,16 @@ function App() {
     <>
       <div
         ref={cursorRef}
-        className="hidden md:block h-[30px] w-[30px]  bg-blue-500 rounded-full fixed z-[9999] pointer-events-none text-center text-[15px] flex items-center justify-center  font-semibold text-white whitespace-nowrap"
+        className="hidden md:block h-[30px] w-[30px]  bg-blue-500 rounded-full fixed z-[9999] pointer-events-none text-center text-[15px] items-center justify-center  font-semibold text-white whitespace-nowrap"
       ></div>
-      
+          <Router>
+
       <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
         {/* Navigation */}
         <Navbar />
+         <Routes>
+          <Route path="/" element={
+            <>
 
         {/* Hero Section */}
         <HeroSection />
@@ -102,6 +108,10 @@ function App() {
 
         {/* Contact Section */}
         <ContactSection />
+          </>
+          } />
+          <Route path="/projects" element={<AllProjects />} />
+        </Routes>
 
         {/* Footer */}
         <footer className="py-8 bg-gray-800">
@@ -122,6 +132,7 @@ function App() {
           <ChevronUp className="w-6 h-6" />
         </button>
       </div>
+      </Router>
     </>
   );
 }

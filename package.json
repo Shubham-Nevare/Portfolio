@@ -12,10 +12,12 @@
   "dependencies": {
     "@iconify/iconify": "^3.1.1",
     "@iconify/react": "^6.0.0",
+    "framer-motion": "^12.23.24",
     "gsap": "^3.13.0",
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.9.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",
