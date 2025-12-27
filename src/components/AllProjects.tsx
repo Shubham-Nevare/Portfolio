@@ -262,7 +262,7 @@ function AllProjects() {
       </div>
 
       {/* Scroll to Top Button */}
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {showScrollTop && (
           <motion.button
             initial={{ opacity: 0, scale: 0 }}
@@ -274,7 +274,7 @@ function AllProjects() {
             <ArrowUp size={18} />
           </motion.button>
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
     </section>
   );
 }
